@@ -1,3 +1,2 @@
-<?php
-mail($to amalrajks6@gmail.com,$name,$subject,$message,[$headers],[$parameters]);
-?>
+<?php echo $_POST["name"]; ?><br>
+amalrajks6@gmail.com: <?php echo $_POST["email"]; ?>
