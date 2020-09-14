@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="css/contact_style.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="css/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 <!-- fontAwesome -->
   <script src="https://kit.fontawesome.com/8972426d49.js" crossorigin="anonymous"></script>
@@ -39,11 +41,12 @@
             <div class="collapse navbar-dark  navbar-collapse " id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                   </li>
+                  <li class="nav-item">
                       <a class="nav-link" href="services.html">Services</a>
                   </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="">Projects</a>
-                  </li>
+
                   <li class="nav-item">
                       <a class="nav-link" href="">Contact</a>
                   </li>
@@ -89,7 +92,7 @@
 		<div class="contact">
 			<h3>E-mail Us</h3>
 
-			<form id="contact-form" action="mail.php" method="POST">
+			<form id="submit-form" action="" >
 
 				<p>
 					<label>Name</label>
@@ -129,6 +132,25 @@
 	<!-- End .wrapper -->
 </div>
 <!-- End .container -->
+<script>
+  $("#submit-form").submit((e)=>{
+      e.preventDefault()
+      $.ajax({
+          url:"https://script.google.com/macros/s/AKfycby8IZdREWlXEqRsgCkEwteIt09yVZu4aaK0DOpjuW1-u5Fczsjy/exec",
+          data:$("#submit-form").serialize(),
+          method:"post",
+          success:function (response){
+              alert("Form submitted successfully")
+              window.location.reload()
+              //window.location.href="https://google.com"
+          },
+          error:function (err){
+              alert("Something Error")
+
+          }
+      })
+  })
+</script>
 
 
      <!-- Footer -->
